@@ -11,6 +11,7 @@
 // ==/UserScript==
 
 window.addEventListener('load', function () {
+console.log('✅ yuh.js script loaded and running');
 
 
 
