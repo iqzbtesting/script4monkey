@@ -10,22 +10,37 @@
 // @license      Attribution
 // ==/UserScript==
 
-// Create the button element and get the script started WOOOOOOO
+window.addEventListener('load', function () {
+
+
+
+const buttonStyle = {
+  position: 'fixed',
+  top: '10px',
+  borderRadius: '10px',
+  left: '10px',
+  width: '200px',
+  height: '30px',
+  fontSize: '16px',
+  color: 'var(--accentcolor)',
+  backgroundColor: 'var(--backgroundcolor)',
+  border: '1px solid #000',
+  cursor: 'pointer',
+  zIndex: '999999'
+};
+
+const buttonHoverStyle = {
+  ...buttonStyle,
+  backgroundColor: '#333',
+  color: '#fff',
+  border: '1px solid #999'
+};
+
 const button = document.createElement('button');
+Object.assign(button.style, buttonStyle);
 button.id = 'toggle-btn';
-button.innerHTML = 'OwO - OFF (Ctrl+Click)'; // Why did I have the placeholder text be OwO? I don't know. Stop asking questions. Loser.
-button.style.position = 'fixed';
-button.style.top = '10px';
-button.style.borderRadius = '10px';
-button.style.left = '10px';
-button.style.width = '200px';
-button.style.height = '30px';
-button.style.fontSize = '16px';
-button.style.color = 'var(--accentcolor)';
-button.style.backgroundColor = 'var(--backgroundcolor)';
-button.style.border = '1px solid #000';
-button.style.cursor = 'pointer';
-button.style.zIndex = '999999';
+button.innerHTML = 'OwO - OFF (Ctrl+Click)';
+
 
 const uiContainer = document.createElement('div');
 uiContainer.id = 'ui-container';
@@ -279,4 +294,6 @@ button.addEventListener("mouseenter", function () {
 // Add event listener for hover effect
 button.addEventListener("mouseleave", function () {
   Object.assign(button.style, buttonStyle);
+});
+
 });
